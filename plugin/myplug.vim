@@ -12,4 +12,8 @@ sys.path.insert(0, python_root_dir)
 import hello
 EOF
 
+function! PrintCountry()
+    python3 hello.print_country()
+endfunction
+
 nnoremap <Leader>sop :source %<CR>
