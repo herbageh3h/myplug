@@ -12,7 +12,7 @@ def get_root():
 
 def take_marker():
     """
-    Taker 
+    Taker
     """
     buff = vim.current.buffer
     buff[0] = get_root()
