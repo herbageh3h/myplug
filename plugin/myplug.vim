@@ -1,5 +1,11 @@
 let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
+if exists('g:myplug_loaded')
+    finish
+endif
+
+let g:myplug_loaded = 1
+
 python3<<EOF
 import sys
 from os.path import normpath, join
@@ -15,5 +21,11 @@ EOF
 function! PrintCountry()
     python3 hello.print_country()
 endfunction
+command! -nargs=0 PrintCountry call PrintCountry()
+
+function! InsertMarker()
+    python3 hello.insert_marker()
+endfunction
+command! -nargs=0 InsertMarker call InsertMarker()
 
 nnoremap <Leader>sop :source %<CR>
